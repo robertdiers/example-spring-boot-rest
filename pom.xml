@@ -45,7 +45,7 @@
 				<version>3.1.4</version>
 				<configuration>
 				    <from>
-					<image>openjdk:11-alpine</image>
+					<image>openjdk:11-jre-slim</image>
 				    </from>
 				    <to>
 					<image>robertdiers/springbootrest</image>
