@@ -1,2 +1,2 @@
-#must be sudo...
-sudo mvn compile jib:build
+#compile and build
+mvn compile jib:build
