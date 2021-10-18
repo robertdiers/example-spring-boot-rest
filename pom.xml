@@ -30,6 +30,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>			
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -45,13 +51,25 @@
 				<version>3.1.4</version>
 				<configuration>
 				    <from>
-					<image>openjdk:11-jre-slim</image>
+						<image>openjdk:11-jre-slim</image>
+						<!--image>openjdk:11</image-->
 				    </from>
 				    <to>
-					<image>robertdiers/springbootrest</image>
+						<image>robertdiers/springbootrest</image>
 				    </to>
+					<container>
+						<jvmFlags>
+							<jvmFlag>-XX:+UseContainerSupport</jvmFlag>
+							<!-- UseContainerSupport: default, but we shoud set explicitly -->
+							<!--PROBLEM FOR LOCAL ENV AS DOCKER_COMPOSE LIMITS IGNORED jvmFlag>-XX:MaxRAMPercentage=75.0</jvmFlag-->
+							<!-- MaxRAMPercentage: for container with more than 256 MB RAM, otherwise use MinRAMPercentage -->
+							<!--PROBLEM FOR LOCAL ENV AS DOCKER_COMPOSE LIMITS IGNORED jvmFlag>-XX:InitialRAMPercentage=75.0</jvmFlag-->
+							<!-- InitialRAMPercentage: use max as this is easier for JVM GC and will fail during startup not during load -->					  
+						</jvmFlags>
+						<mainClass>com.twodigits.springbootrest.SpringbootrestApplication</mainClass>
+					</container>
 				</configuration>
-			    </plugin>
+			</plugin>
 		</plugins>
 	</build>
 
