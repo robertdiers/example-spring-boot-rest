@@ -31,10 +31,19 @@
 			<scope>test</scope>			
 		</dependency>
 
+		<!-- actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+
+		<!-- prometheus -->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
 
 	</dependencies>
 
