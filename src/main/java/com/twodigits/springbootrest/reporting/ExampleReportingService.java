@@ -1,7 +1,9 @@
-package com.twodigits.springbootrest.rest;
+package com.twodigits.springbootrest.reporting;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import com.twodigits.springbootrest.rest.ReportTO;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

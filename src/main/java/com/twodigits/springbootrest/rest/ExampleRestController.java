@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Date;
 import java.util.UUID;
 
+import com.twodigits.springbootrest.reporting.ExampleReportingService;
+
 @RestController
 @Slf4j
 public class ExampleRestController { 
